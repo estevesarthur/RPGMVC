@@ -1,0 +1,48 @@
+@model IEnumerable<RpgMvc.Models.ArmaViewModel>
+@{
+    ViewBag.Title = "Index";}
+
+@if (@TempData["Mensagem"] != null)
+{
+    <div class="alert alert-sucess" role="start">
+        @TempData["Mensagem"]
+    </div>
+}
+
+<h2>Relação de Armas</h2>
+<p>
+    @Html.ActionLink("Criar nova Arma", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dano)
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dano)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.Id}) |
+                @Html.ActionLink("Detalhes", "Details", new { id = item.Id}) |
+                @Html.ActionLink("Deletar", "Delete", new { id = item.Id}
+            , new { onclick = "return confirm('Deseja realmente exluir esta arma?');"})
+            </td>
+        </tr>
+    }
+</table>

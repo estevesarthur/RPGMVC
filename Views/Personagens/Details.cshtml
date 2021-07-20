@@ -1,0 +1,35 @@
+@model RpgMvc.Models.PersonagemViewModel
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalhes do Personagem</h2>
+<div>
+    <hr>
+    <dl class="dl-horizontal">
+        <dt>@Html.DisplayNameFor(model => model.Id)</dt>
+        <dd>@Html.DisplayFor(model => model.Id)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Nome)</dt>
+        <dd>@Html.DisplayFor(model => model.Nome)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.PontosVida)</dt>
+        <dd>@Html.DisplayFor(model => model.PontosVida)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Forca)</dt>
+        <dd>@Html.DisplayFor(model => model.Forca)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Defesa)</dt>
+        <dd>@Html.DisplayFor(model => model.Defesa)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Inteligencia)</dt>
+        <dd>@Html.DisplayFor(model => model.Inteligencia)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Classe)</dt>
+        <dd>@Html.DisplayFor(model => model.Classe)</dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new {id = Model.Id}) |
+    @Html.ActionLink("Retornar", "Index")
+</p>
